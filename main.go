@@ -1,9 +1,10 @@
 package main
 
-import "fmt"
-import "GoWheels/exercise/ch5"
+import (
+	"GoWheels/utils"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("It works!")
-	ch5.Squares()
+	fmt.Println(utils.DigitCounter(5))
 }

@@ -2,10 +2,7 @@ package leetcode
 
 func combinationSum(candidates []int, target int) [][]int {
 	// 递归实现
-	m := make(map[int]int)
-	res := make([][]int, 0)
-
-	return res
+	return nil
 }
 
 func cal(candidates []int, target int) (res map[int]int) {
@@ -14,4 +11,5 @@ func cal(candidates []int, target int) (res map[int]int) {
 			res[candidate]++
 		}
 	}
+	return nil
 }

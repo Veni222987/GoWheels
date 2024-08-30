@@ -86,3 +86,8 @@ func buildTree(data string) (root *TreeNode) {
 	}
 	return root
 }
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
