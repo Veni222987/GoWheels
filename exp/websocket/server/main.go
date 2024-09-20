@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 
@@ -52,13 +52,16 @@ func httpHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 读取请求体
-	body, err := ioutil.ReadAll(r.Body)
+	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		http.Error(w, "无法读取请求体", http.StatusBadRequest)
 		return
 	}
 
-	resMsg := "收到:" + string(body)
+	msg := &Message{}
+	json.Unmarshal(body, msg)
+
+	resMsg := "收到:" + msg.Msg
 	log.Println(string(resMsg))
 
 	// 返回响应
